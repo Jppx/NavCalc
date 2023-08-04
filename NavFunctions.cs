@@ -148,7 +148,7 @@ namespace NavCalc
         {
             DMSReference thisRef = new DMSReference();
             int d = (int)digDegrees;  // Truncate the decimals
-            double  t1 = (digDegrees - d) * 60;
+            double t1 = (digDegrees - d) * 60;
             int m = (int)t1;
             double s = (t1 - m) * 60;
             thisRef.degrees = d;
@@ -159,17 +159,27 @@ namespace NavCalc
         }
     }
 
+    /// <summary>
+    /// Range object for returned values
+    /// </summary>
     public class targetRange
     {
         public double range = 0.00;
         public string units = string.Empty;
     }
+
+    /// <summary>
+    /// Bearing (Direction) object for returned values
+    /// </summary>
     public class targetBearing
     {
         public Int32 bearing = 0;
         public string CompassDirection = string.Empty;
     }
 
+    /// <summary>
+    /// GPS ref object in degree/minutes/seconds format (either a lat or long)
+    /// </summary>
     public class DMSReference
     {
         public int degrees = 0;
@@ -177,6 +187,9 @@ namespace NavCalc
         public int secs = 0;
     }
 
+    /// <summary>
+    /// A GPS position object in deiginal degrees (either lat or long)
+    /// </summary>
     public class digitalDegrees
     {
         public double degrees = 0.00;
